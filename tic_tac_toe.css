@@ -1,0 +1,53 @@
+*{
+	text-align: center;
+}
+
+body {
+background: yellow;
+}
+
+html {
+	font-size: 20;
+	font-family: helvetica;
+}
+
+table {
+	margin-left: 30%;
+}
+
+td {
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: lightGray;
+    font-size: 40px;
+}
+
+#player_info {
+width: 600px;
+}
+
+button {
+	background-color: white;
+	width: 200px;
+	height: 25px;
+	margin-left: 20%;
+}
+
+input[type="text"]:first-child {
+	margin-left: 5%;
+
+}
+
+input[type="text"]:nth-child(2) {
+	margin-left: 50%;
+
+}
+
+::-webkit-input-placeholder {
+		color:rgba(255, 0, 0, 0.8);
+}
+
+input[type="text"]:active, input[type="text"]:focus {
+	border: 2px solid blue;
+}
