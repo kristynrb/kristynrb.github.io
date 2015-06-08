@@ -1,18 +1,20 @@
 *{
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
 }
 
 body {
-background: #9BC1BC
+	background: #9BC1BC
 }
 
-html {
-	font-size: 20;
-	font-family: helvetica;
+h1 {
+	position: relative;
+	margin-left: auto;
+	margin-top: 2%;
 }
-
 table {
-	margin-left: 30%;
+	position: relative;
+	margin: auto;
 }
 
 td {
@@ -27,52 +29,92 @@ td {
 }
 
 td:hover {
-	margin-top: 5px;
+	background-color: #B7D39E;
 }
 
-#player_info {
-width: 600px;
+#bandaidOnBulletWound {
+	width: 70%;
+	height: 50%;
+	background-color: #D5DE8B;
+	z-index: 2;
+	display: none;
+	position: fixed;
+	top:0;
+	font-size: 50px;
+	padding-top: 15%;
 }
 
 button {
 	background-color: #ED6A5A;
 	width: 200px;
-	height: 25px;
-	margin-left: 20%;
-	font-size: 15px;
-}
+	height: 40px;
 
-span {
-	height: 30px;
-}
-input {
-	float: left;
-}
+	font-size: 22px;
+	font-weight: bold;
 
-.score {
-	float: left;
-}
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 
-input[type="text"]:first-child {
-	margin-left: 5%;
-	width: 200px;
-	height: 50px;
-	padding: 0px;
-}
-
-input[type="text"]:nth-child(2) {
-	margin-left: 50%;
-}
-
-#nameOneDiv {
-	background-color:white;
+	float: center;
+	position: relative;
+	margin: auto;
+	display: block;
+/*	margin-left: 15%*/
 }
 
 ::-webkit-input-placeholder {
-		color:gray;
-		font-size: 15px;
+	color:gray;
+	font-size: 20px;
+	padding: 0px;
+}
+
+#player_info1 {	
+	float: left;
+	display: block;
+	font-size: 20px;
+	position: relative;
+	border: ridge;
+	margin-left: 27.5%;
+	margin-top: 5px;
+}
+
+#player_info2 {
+	margin: auto;
+	float: left;
+	display: block;
+	font-size: 20px;
+	position: relative;
+	border: ridge;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+input {
+	height: 60px;
+	width: 300px;
+	padding: 0px;
+	font-size: 20px;
+	font-style: bold;
 }
 
 input[type="text"]:active, input[type="text"]:focus {
 	border: 2px solid blue;
+}
+
+#play_1_score {
+	background-color: #8D6B72;
+}
+
+#play_2_score {
+	background-color: #8D6B72;
+}
+
+#clear {
+	position: fixed;
+	top: 40%;
+	right: 2.5%;
+	float: left;
+	height: 20%;
+	width: 25%;
+	display:none;
 }

@@ -1,18 +1,18 @@
 console.log("js sheet is linked properly");
 
 var playerOne = {
-	name: "",
+	pName: "",
 	piece: "X",
 	score: 0
 };
 
 var playerTwo = {
-	name: "",
+	pName: "",
 	piece: "O",
 	score: 0
 };
 
-var $win = "n";
+var $winName = "";
 
 var $board = [
 	[$('#space_1'), $('#space_2'), $('#space_3')],
@@ -20,10 +20,22 @@ var $board = [
 	[$('#space_7'), $('#space_8'), $('#space_9')]
 ];
 
+var $newBoard = [
+	[$('#space_1'), $('#space_2'), $('#space_3')],
+	[$('#space_4'), $('#space_5'), $('#space_6')],
+	[$('#space_7'), $('#space_8'), $('#space_9')]
+];
+
+function displayScore() {
+	$("#play_1_score").text("Score: " + playerOne.score);
+	$("#play_2_score").text("Score: " + playerTwo.score);
+}
+
 function startTheGame() {
-	$('button').on('click', function() {
-		this.disabled = false;
+	$('#play').on('click', function() {
+		this.disabled = false
 		game.assignSpace();
+		$( "#play" ).hide( "slow" );
 	});
 };
 
@@ -35,15 +47,15 @@ var game = {
 
 	acceptNames: function(e) {
         $('#playOneName').change(function() {
-        	$name = $("input#playOneName").val();
+        	var $name = $("input#playOneName").val();
+        	playerOne.pName = $name;
         	this.disabled = true;
-        	alert("your name is " + $name);		//FOR TESTING ONLY
         });
 
         $('#playTwoName').change(function() {
-        	$name = $("input#playTwoName").val();
+        	var $name = $("input#playTwoName").val();
+        	playerTwo.pName = $name;
         	this.disabled = true;
-        	alert("your name is " + $name);		//FOR TESTING ONLY
         });
 	},
 
@@ -87,9 +99,9 @@ var game = {
 		// row:
 		if ($board[rowNumber][0].text() === $board[rowNumber][1].text() && 
 			$board[rowNumber][1].text() === $board[rowNumber][2].text()) {
-			alert(game.currentPlayer().piece, "has won by row!");
 			
-			var $win = game.currentPlayer().piece;
+			$('board').prop('readonly', true);
+			var $winName = game.currentPlayer().pName;
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
@@ -97,76 +109,65 @@ var game = {
 		// column
 		if ($board[0][columnNumber].text() === $board[1][columnNumber].text() && 
 			$board[1][columnNumber].text() === $board[2][columnNumber].text()) {
-			alert(game.currentPlayer().piece, "has won by column!");
 			
-			var $win = game.currentPlayer().piece;
+			var $winName = game.currentPlayer().pName;
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 
-		// diagonals NOT WORKING
+		// diagonals 
 		if ($board[0][0].text() === "X" && $board[1][1].text() === "X" && 
 			$board[2][2].text() === "X") {
-			alert("XX has won diagonally1!");
 			
-			var $win = game.currentPlayer().piece;
+			var $winName = game.currentPlayer().pName;
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 
 		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" && 
 			$board[2][2].text() === "O") {
-			alert("OO has won diagonally1!");
 			
-			var $win = game.currentPlayer().piece;
+			var $winName = game.currentPlayer().pName;
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 
 		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" && 
 			$board[2][0].text() === "X") {
-			alert("XX has won diagonally!");
 			
-			var $win = game.currentPlayer().piece;
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 
 		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" && 
 			$board[2][0].text() === "O") {
-			alert("OO has won diagonally!");
 			
-			var $win = game.currentPlayer().piece;
+			var $winName = game.currentPlayer().pName;
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 	},
 
-	clearBoard: function() {
-		for (var i = 0; i < $board.length; i++) {
-			for (j = 0; j < $board.length; j++) {
-				$board[i][j].empty;
-			}
-		};
-	}
+		clearBoard: function(win) {
+				$( "#bandaidOnBulletWound").text(game.currentPlayer().piece + " is the winner!");
+				$( "#bandaidOnBulletWound" ).show( "slow" );
+				$('#clear').show("slow");
 
-		// restartGame: function(win) {
-		// 	if ($win === "X" || $win === "O") {
-		// 		alert("Play again?");
-		// 		if ($('td').text() === "X") {
-		// 			$('td').text("");
-		// 		} else if ($('td').text() === "O"){
-		// 			$('td').text("");
-	 //     	 	};
-
-		// 		console.log(board);
-
-		// 		game.selectFirstToGo();
-		// 		game.assignSpace();
-			// };
-		// }
+				$('#clear').on('click', function(){
+					$( "#bandaidOnBulletWound" ).hide( "slow" )
+					$('#clear').hide("slow");
+					$board = $newBoard;
+						if ($('td').text()) {
+							$('td').text("");
+	     	 	};
+			})
+				game.selectFirstToGo();
+				game.assignSpace();
+				displayScore();
+		}
 };
 
 startTheGame();
+displayScore();
 game.acceptNames();
 game.selectFirstToGo();
