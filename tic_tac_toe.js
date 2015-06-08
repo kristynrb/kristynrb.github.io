@@ -1,91 +1,172 @@
 console.log("js sheet is linked properly");
 
-var firstPlayer = {
+var playerOne = {
 	name: "",
 	piece: "X",
 	score: 0
 };
 
-var secondPlayer = {
+var playerTwo = {
 	name: "",
 	piece: "O",
 	score: 0
 };
 
-var space1 = $('#space_1').text();
-var space2 = $('#space_2').text();
-var space3 = $('#space_3').text();
-var space4 = $('#space_4').text();
-var space5 = $('#space_5').text();
-var space6 = $('#space_6').text();
-var space7 = $('#space_7').text();
-var space8 = $('#space_8').text();
-var space9 = $('#space_9').text();
+var $win = "n";
+
+var $board = [
+	[$('#space_1'), $('#space_2'), $('#space_3')],
+	[$('#space_4'), $('#space_5'), $('#space_6')],
+	[$('#space_7'), $('#space_8'), $('#space_9')]
+];
+
+function startTheGame() {
+	$('button').on('click', function() {
+		this.disabled = false;
+		game.assignSpace();
+	});
+};
 
 var game = {
-	acceptNames: function() {
-		// var firstPlayer.name = $currentInput.val();
+	players: [
+		playerOne,
+		playerTwo
+	],
+
+	acceptNames: function(e) {
+        $('#playOneName').change(function() {
+        	$name = $("input#playOneName").val();
+        	this.disabled = true;
+        	alert("your name is " + $name);		//FOR TESTING ONLY
+        });
+
+        $('#playTwoName').change(function() {
+        	$name = $("input#playTwoName").val();
+        	this.disabled = true;
+        	alert("your name is " + $name);		//FOR TESTING ONLY
+        });
 	},
 
+	nextPlayer: function () {
+		this.players.push(this.players.shift());
+	},
 
-// selectFirstToGo: function(){
-// 	random function that selects who will go first (playerOne or playerTwo)
-// 	once the first player is chosen, insert the player's piece.
+	currentPlayer: function () {
+		return this.players[0];
+	},
 
-	// playMode: function () {
-	// 		$('td').on('click', function () {
-	// 			if ($('td').text() = null) {
-	// 				$('td').push(firstPlayer);
-	// },
+	selectFirstToGo: function() {
+		var chance = Math.random();
+		if (chance < 0.5) {
+			this.nextPlayer();
+		};
+		console.log(this.currentPlayer());
+	},
 
-	// testClick: function () {	//QUESTION FOR MATT
-	// 	$( "#space" ).toggle(function() {
-	// 	  alert( "First player move." );
-	// 		}, function() {
-	// 	  alert( "Second player move." );
-	// 		})
-	// 	},
-
-	assignSpace: function() {		//QUESTION FOR MATT: HOW TO SET INNER TEXT - I"M ABLE TO GRAB THE ELEMENT ON CLICK, NOW JUST NEED TO ADD TEXT
+	assignSpace: function() {	
 		$('td').on('click', function() {
-			alert("you clicked a space");   // for testing purposes
-			console.log(this);
-	// 		var that = this;
-	// 		var that = that.text(secondPlayer.piece);
+			var $td = $(this),
+ 				$tr = $td.parent(),
+			    $allTrs = $('tr'),
+				$trChildren = $tr.children();
+
+			var row = $allTrs.index($tr),
+			    col = $trChildren.index($td);
+
+			if (!$td.text()) {
+				$td.text(game.currentPlayer().piece);
+
+				game.checkForWinner(row, col);
+				game.nextPlayer();
+			}
 		});
 	},
 
-	findWinner: function() {
+	checkForWinner: function (rowNumber, columnNumber) {
+		console.log(rowNumber, columnNumber);
+		// row:
+		if ($board[rowNumber][0].text() === $board[rowNumber][1].text() && 
+			$board[rowNumber][1].text() === $board[rowNumber][2].text()) {
+			alert(game.currentPlayer().piece, "has won by row!");
+			
+			var $win = game.currentPlayer().piece;
+			game.currentPlayer().score = game.currentPlayer().score + 1;
+			game.clearBoard();
+		};
 
-	//find if there's a winner in the rows
-		if ((space1 === space2) && (space2 === space3)) {
-			alert(space1 + " is the winner - they won by rows!");
-				//increase score of winner
-			alert("play again?");
-		} else if ((space4 === space5) && (space5 === space6)) {
-			alert(space4 + " is the winner - they won by rows!");
-		} else if ((space7 === space8) && (space8 === space9)) {
-			alert(space7 + " is the winner - they won by rows!");
+		// column
+		if ($board[0][columnNumber].text() === $board[1][columnNumber].text() && 
+			$board[1][columnNumber].text() === $board[2][columnNumber].text()) {
+			alert(game.currentPlayer().piece, "has won by column!");
+			
+			var $win = game.currentPlayer().piece;
+			game.currentPlayer().score = game.currentPlayer().score + 1;
+			game.clearBoard();
+		};
 
-	//find if there's a winner in the columns
-		} else if ((space1 === space4) && (space4 === space7)) {
-			alert(space1 + " is the winner - they won by columns!");
-		} else if ((space2 === space5) && (space5 === space8)) {
-			alert(space2 + " is the winner - they won by columns!!");
-		} else if ((space3 === space6) && (space6 === space9)) {
-			alert(space3 + " is the winner - they won by columns!!");
+		// diagonals NOT WORKING
+		if ($board[0][0].text() === "X" && $board[1][1].text() === "X" && 
+			$board[2][2].text() === "X") {
+			alert("XX has won diagonally1!");
+			
+			var $win = game.currentPlayer().piece;
+			game.currentPlayer().score = game.currentPlayer().score + 1;
+			game.clearBoard();
+		};
 
-	//find if there's a winner diagonally
-		} else if ((space1 === space5) && (space5 === space9)) {
-			alert(space1 + " is the winner - they won diagonally!");
-			//increase score of winner
-			alert("play again?");
-		} else if ((space3 === space5) && (space5 === space7)) {
-			alert(space4 + " is the winner - they won diagonally!!");
-		} else {
-			alert("not yet"); //this is just for testing purposes.
-		}
-	alert("play again?");
+		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" && 
+			$board[2][2].text() === "O") {
+			alert("OO has won diagonally1!");
+			
+			var $win = game.currentPlayer().piece;
+			game.currentPlayer().score = game.currentPlayer().score + 1;
+			game.clearBoard();
+		};
+
+		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" && 
+			$board[2][0].text() === "X") {
+			alert("XX has won diagonally!");
+			
+			var $win = game.currentPlayer().piece;
+			game.currentPlayer().score = game.currentPlayer().score + 1;
+			game.clearBoard();
+		};
+
+		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" && 
+			$board[2][0].text() === "O") {
+			alert("OO has won diagonally!");
+			
+			var $win = game.currentPlayer().piece;
+			game.currentPlayer().score = game.currentPlayer().score + 1;
+			game.clearBoard();
+		};
+	},
+
+	clearBoard: function() {
+		for (var i = 0; i < $board.length; i++) {
+			for (j = 0; j < $board.length; j++) {
+				$board[i][j].empty;
+			}
+		};
 	}
-	
+
+		// restartGame: function(win) {
+		// 	if ($win === "X" || $win === "O") {
+		// 		alert("Play again?");
+		// 		if ($('td').text() === "X") {
+		// 			$('td').text("");
+		// 		} else if ($('td').text() === "O"){
+		// 			$('td').text("");
+	 //     	 	};
+
+		// 		console.log(board);
+
+		// 		game.selectFirstToGo();
+		// 		game.assignSpace();
+			// };
+		// }
 };
+
+startTheGame();
+game.acceptNames();
+game.selectFirstToGo();

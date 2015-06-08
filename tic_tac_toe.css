@@ -3,7 +3,7 @@
 }
 
 body {
-background: yellow;
+background: #9BC1BC
 }
 
 html {
@@ -19,8 +19,15 @@ td {
     border: 3px solid black;
     width: 100px;
     height: 100px;
-    background-color: lightGray;
+    background-color: #E6EBE0;
     font-size: 40px;
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+td:hover {
+	margin-top: 5px;
 }
 
 #player_info {
@@ -28,24 +35,42 @@ width: 600px;
 }
 
 button {
-	background-color: white;
+	background-color: #ED6A5A;
 	width: 200px;
 	height: 25px;
 	margin-left: 20%;
+	font-size: 15px;
+}
+
+span {
+	height: 30px;
+}
+input {
+	float: left;
+}
+
+.score {
+	float: left;
 }
 
 input[type="text"]:first-child {
 	margin-left: 5%;
-
+	width: 200px;
+	height: 50px;
+	padding: 0px;
 }
 
 input[type="text"]:nth-child(2) {
 	margin-left: 50%;
+}
 
+#nameOneDiv {
+	background-color:white;
 }
 
 ::-webkit-input-placeholder {
-		color:rgba(255, 0, 0, 0.8);
+		color:gray;
+		font-size: 15px;
 }
 
 input[type="text"]:active, input[type="text"]:focus {
