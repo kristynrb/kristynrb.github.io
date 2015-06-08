@@ -1,4 +1,5 @@
 console.log("js sheet is linked properly");
+console.log("checking the push");
 
 var playerOne = {
 	pName: "",
