@@ -83,7 +83,7 @@ var game = {
  				$tr = $td.parent(),
 			    $allTrs = $('tr'),
 				$trChildren = $tr.children();
-				var $counter = $counter + 1;
+				$counter = $counter + 1;
 
 			var row = $allTrs.index($tr),
 			    col = $trChildren.index($td);
