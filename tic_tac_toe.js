@@ -159,7 +159,7 @@ var game = {
 				$( "#bandaidOnBulletWound").text("The game is a tie!");
 			} else {
 				$( "#bandaidOnBulletWound").text(game.currentPlayer().piece + " is the winner!");
-			// };
+			};
 
 				$( "#bandaidOnBulletWound" ).show( "slow" );
 				$('#clear').show("slow");
