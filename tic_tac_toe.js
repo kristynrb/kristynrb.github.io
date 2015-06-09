@@ -1,20 +1,20 @@
-console.log("js sheet is linked properly");
-console.log("checking the push");
+// console.log("js sheet is linked properly");
+// console.log("checking the push");
 
 var count = 0;
 
 var playerOne = {
 	pName: "",
 	piece: "X",
-	score: 0,
-	tie: true
+	score: 0
+	// tie: true
 };
 
 var playerTwo = {
 	pName: "",
 	piece: "O",
-	score: 0,
-	tie: true
+	score: 0
+	// tie: true
 };
 
 var $board = [
@@ -100,17 +100,9 @@ var game = {
 
 	checkForWinner: function (rowNumber, columnNumber) {
 		console.log(rowNumber, columnNumber);
-		// row:
-		// if (var count = 9) {
-		// 		var tie = "true"
-		// 		game.clearBoard();
-		// };
 
 		if ($board[rowNumber][0].text() === $board[rowNumber][1].text() && 
 			$board[rowNumber][1].text() === $board[rowNumber][2].text()) {
-			
-			game.currentPlayer().tie = false;
-			// var $tie = false; 
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
@@ -120,8 +112,6 @@ var game = {
 		if ($board[0][columnNumber].text() === $board[1][columnNumber].text() && 
 			$board[1][columnNumber].text() === $board[2][columnNumber].text()) {
 
-			var $tie = game.currentPlayer().tie;
-			var $tie = false; 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
@@ -130,17 +120,12 @@ var game = {
 		if ($board[0][0].text() === "X" && $board[1][1].text() === "X" && 
 			$board[2][2].text() === "X") {
 			
-			var $tie = game.currentPlayer().tie;
-			var $tie = false; 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 
 		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" && 
 			$board[2][2].text() === "O") {
-			
-			var $tie = game.currentPlayer().tie;
-			var $tie = false; 
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
@@ -149,18 +134,12 @@ var game = {
 		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" && 
 			$board[2][0].text() === "X") {
 			
-			var $tie = game.currentPlayer().tie;
-			var $tie = false; 
-
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
 		};
 
 		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" && 
 			$board[2][0].text() === "O") {
-			
-			game.currentPlayer().tie = false;
-			// var $tie = false; 
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
@@ -168,11 +147,11 @@ var game = {
 	},
 
 		clearBoard: function() {
-			if ($tie = true) {
-				$( "#bandaidOnBulletWound").text("The game is a tie!");
-			} else {
+			// if ($tie = true) {
+			// 	$( "#bandaidOnBulletWound").text("The game is a tie!");
+			// } else {
 				$( "#bandaidOnBulletWound").text(game.currentPlayer().piece + " is the winner!");
-			};
+			// };
 
 				$( "#bandaidOnBulletWound" ).show( "slow" );
 				$('#clear').show("slow");
