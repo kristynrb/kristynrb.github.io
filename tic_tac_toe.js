@@ -155,7 +155,7 @@ var game = {
 	},
 
 		clearBoard: function() {
-			if ($winner != true) {
+			if ($winner != true && $counter === 9) {
 				$( "#bandaidOnBulletWound").text("The game is a tie!");
 			} else {
 				$( "#bandaidOnBulletWound").text(game.currentPlayer().piece + " is the winner!");
