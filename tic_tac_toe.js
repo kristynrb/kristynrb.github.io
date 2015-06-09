@@ -1,20 +1,19 @@
 // console.log("js sheet is linked properly");
 // console.log("checking the push");
 
-var count = 0;
+var $counter = 0;
+var $winner = false;
 
 var playerOne = {
 	pName: "",
 	piece: "X",
 	score: 0
-	// tie: true
 };
 
 var playerTwo = {
 	pName: "",
 	piece: "O",
 	score: 0
-	// tie: true
 };
 
 var $board = [
@@ -84,7 +83,7 @@ var game = {
  				$tr = $td.parent(),
 			    $allTrs = $('tr'),
 				$trChildren = $tr.children();
-				// var count = count + 1;
+				var $counter = $counter + 1;
 
 			var row = $allTrs.index($tr),
 			    col = $trChildren.index($td);
@@ -106,6 +105,7 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
+			$winner = true;
 		};
 
 		// column
@@ -114,6 +114,7 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
+			$winner = true;
 		};
 
 		// diagonals 
@@ -122,6 +123,7 @@ var game = {
 			
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
+			$winner = true;
 		};
 
 		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" && 
@@ -129,6 +131,7 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
+			$winner = true;
 		};
 
 		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" && 
@@ -136,6 +139,7 @@ var game = {
 			
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
+			$winner = true;
 		};
 
 		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" && 
@@ -143,13 +147,17 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-		} 	
+			$winner = true;
+		} ;
+		if ($counter = 9) {
+			game.clearBoard();
+		};
 	},
 
 		clearBoard: function() {
-			// if ($tie = true) {
-			// 	$( "#bandaidOnBulletWound").text("The game is a tie!");
-			// } else {
+			if ($winner != true) {
+				$( "#bandaidOnBulletWound").text("The game is a tie!");
+			} else {
 				$( "#bandaidOnBulletWound").text(game.currentPlayer().piece + " is the winner!");
 			// };
 
