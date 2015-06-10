@@ -105,7 +105,7 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-			$winner = true;
+			var $winner = true;
 		};
 
 		// column
@@ -114,7 +114,7 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-			$winner = true;
+			var $winner = true;
 		};
 
 		// diagonals 
@@ -123,7 +123,7 @@ var game = {
 			
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-			$winner = true;
+			var $winner = true;
 		};
 
 		if ($board[0][0].text() === "O" && $board[1][1].text() === "O" && 
@@ -131,7 +131,7 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-			$winner = true;
+			var $winner = true;
 		};
 
 		if ($board[0][2].text() === "X" && $board[1][1].text() === "X" && 
@@ -139,7 +139,7 @@ var game = {
 			
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-			$winner = true;
+			var $winner = true;
 		};
 
 		if ($board[0][2].text() === "O" && $board[1][1].text() === "O" && 
@@ -147,16 +147,16 @@ var game = {
 
 			game.currentPlayer().score = game.currentPlayer().score + 1;
 			game.clearBoard();
-			$winner = true;
+			var $winner = true;
 		} ;
 		if ($counter === 9) {
-			$winner = false;
+			var $winner = false;
 			game.clearBoard();
 		};
 	},
 
 		clearBoard: function() {
-			if ($winner != true) {
+			if ($winner !== true) {
 				$( "#bandaidOnBulletWound").text("The game is a tie!");
 			} else {
 				$( "#bandaidOnBulletWound").text(game.currentPlayer().piece + " is the winner!");
