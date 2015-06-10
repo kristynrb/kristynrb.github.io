@@ -150,6 +150,7 @@ var game = {
 			$winner = true;
 		} ;
 		if ($counter === 9) {
+			$winner = false;
 			game.clearBoard();
 		};
 	},
