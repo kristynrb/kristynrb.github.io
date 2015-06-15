@@ -10,10 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- <link rel="stylesheet" type="text/css" href="coverr.css"> -->
 </head>
-
 <body>
   <!-- Navigation bar -->
-  <nav>
+  <nav class="z-depth-1">
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
       <a href="#contact" class="brand-logo left"><img style="max-width:100px; margin-top: -7px;" src="views/kblogo.jpg"></a>
@@ -33,84 +32,17 @@
   </nav>
 
 
-  <div><a href="#about"><img class="background-image responsive-img" src="views/The-Crosswalk/Snapshots/Poster.jpg"></a></div>
-
-  <!-- About Me section -->
-  <a id="about"></a>
-  <div class="center-align">
-    <div class="container">
-      <div class="section" id="header">
-        <h1>Who Am I?</h1>
-        <h2 id="about_me">I am a web developer with a passion for learning, problem solving, and collaborating to make ideas become reality. A former educator from Pittsburgh, my quest for knowledge continues in NYC.</h2>
-        <div><img id="pittsburgh" class="responsive-img" src="views/skyline-pittsburgh.png"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Philosophy section -->
-  <div class="container center-align">
-    <div class="section" id="header"><a id="philosophy"></a>
-      <h1>My Coding Philosophy</h1>
-      <h2>"Just because something doesn't do what you planned it to do doesn't mean it's useless."</h2>
-      <h2>- Thomas Edison</h2>
-      <div id="philosophy" class="row">
-        <div class="col s4">
-          <img src="views/learn.jpg" class="circle responsive-img" >
-          <p>Learn ferociosly.</p>
-        </div>
-        <div class="col s4">
-          <img src="views/steps.jpg" class="circle responsive-img">
-          <p>Collaborate and be open to critique.</p>
-        </div>
-        <div class="col s4">
-          <img src="views/prague.jpg" class="circle responsive-img">
-          <p>Make it easy to maintain.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Languages section -->
-  <a id="languages"></a>
-  <div class="center-align">
-    <div class="container">
-      <div class="section" id="header">
-        <h1>Related Technologies</h1>
-
-        <div class="row">
-          <div class="col s6 m3 l3">
-            <img src="views/website_software_imgs/angularjs.jpg" >
-            <img src="views/website_software_imgs/jquery.jpg" >
-            <img src="views/website_software_imgs/npm.png">
-            <img src="views/website_software_imgs/node.jpg">
-          </div>
-          <div class="col s6 m3 l3">
-            <img style="margin: 1px;" src="views/website_software_imgs/css.png">
-            <img style="margin: 1px;" src="views/website_software_imgs/mongodb.jpg">
-            <img style="margin: 1px;" src="views/website_software_imgs/php.jpg">
-          </div>
-          <div class="col s12 m3 l3">
-            <img src="views/website_software_imgs/HTML5_Logo_64.png">
-            <img src="views/website_software_imgs/mysql.jpg">
-            <img src="views/website_software_imgs/postgresql.png">
-          </div>
-          <div class="col s12 m3 l3">
-            <img style="margin: 1px;"src="views/website_software_imgs/javascript.jpg">
-            <img style="margin: 1px;" src="views/website_software_imgs/rails.jpg">
-            <img style="margin: 1px;"src="views/website_software_imgs/ruby.jpg">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div><a href="#about"><img class="background-image responsive-img z-depth-1" src="views/The-Crosswalk/Snapshots/Poster.jpg"></a></div>
 
   <!-- Project section -->
   <a id="projects"></a>
-  <div class="container" id="header">
+  <div class="center-align">
+    <div id="header-container" class="valign-wrapper z-depth-1">
+      <h1 class="valign">Featured Work</h1>
+    </div>
+  </div>
+  <div class="container">
     <div class="section">
-      <div class="center-align">
-        <h1>Featured Work</h1>
-      </div>
       <div class="row">
         <div class="col s12">
           <div id="prjimg" class="col s12 m6 l6">
@@ -148,23 +80,102 @@
     </div>
   </div>
 
+
+  <!-- Philosophy section -->
+  <!-- <div class="section"><a id="philosophy"></a>
+    <div id="header-container" class="valign-wrapper z-depth-1">
+      <h1 class="center-align">My Coding Philosophy</h1>
+    </div>
+    <div class="container center-align">
+      <h2>"Just because something doesn't do what you planned it to do <br>doesn't mean it's useless."</h2>
+      <h2>- Thomas Edison</h2>
+      <div id="philosophy" class="row">
+        <div class="col s4">
+          <img src="views/learn.jpg" class="circle responsive-img" >
+          <p>Learn ferociosly.</p>
+      </div>
+        <div class="col s4">
+          <img src="views/steps.jpg" class="circle responsive-img">
+          <p>Collaborate and be open to critique.</p>
+        </div>
+        <div class="col s4">
+          <img src="views/prague.jpg" class="circle responsive-img">
+          <p>Make it easy to maintain.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Languages section -->
+  <a id="languages"></a>
+  <div class="center-align">
+    <div id="header-container" class="valign-wrapper z-depth-1">
+      <h1>Related Technologies</h1>
+    </div>
+    <div class="container">
+      <div class="section">
+
+        <div class="row">
+          <div class="col s6 m3 l3">
+            <img src="views/website_software_imgs/angularjs.jpg" >
+            <img src="views/website_software_imgs/jquery.jpg" >
+            <img src="views/website_software_imgs/npm.png">
+            <img src="views/website_software_imgs/node.jpg">
+          </div>
+          <div class="col s6 m3 l3">
+            <img style="margin: 1px;" src="views/website_software_imgs/css.png">
+            <img style="margin: 1px;" src="views/website_software_imgs/mongodb.jpg">
+            <img style="margin: 1px;" src="views/website_software_imgs/php.jpg">
+          </div>
+          <div class="col s12 m3 l3">
+            <img src="views/website_software_imgs/HTML5_Logo_64.png">
+            <img src="views/website_software_imgs/mysql.jpg">
+            <img src="views/website_software_imgs/postgresql.png">
+          </div>
+          <div class="col s12 m3 l3">
+            <img style="margin: 1px;"src="views/website_software_imgs/javascript.jpg">
+            <img style="margin: 1px;" src="views/website_software_imgs/rails.jpg">
+            <img style="margin: 1px;"src="views/website_software_imgs/ruby.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Me section -->
+  <a id="about"></a>
+  <div class="center-align">
+    <div class="section">
+      <div id="header-container" class="valign-wrapper z-depth-1">
+        <h1>Who Am I?</h1>
+      </div>
+        <div class="container">
+          <h2 id="about_me">I am a web developer with a passion for learning, problem solving, and collaborating to make ideas become reality. A former educator from Pittsburgh, my quest for knowledge continues in NYC.</h2>
+          <div><img id="pittsburgh" class="responsive-img" src="views/skyline-pittsburgh.png"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Contact section -->
   <div class="center-align">
-    <div class="container">
-      <div class="section" id="header"><a id="content"></a>
-        <h1 id="contact">Get in Touch!</h1>
-        <div class="row">
-          <div class="col s3">
-            <a href="https://www.linkedin.com/in/kristynbryan" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>
-          </div>
-          <div class="col s3">
-            <a href="mailto:kristynrb@gmail.com" target="_blank"><i class="fa fa-envelope-o fa-5x"></i></a>
-          </div>
-          <div class="col s3">
-            <a href="https://github.com/kristynrb" target="_blank"><i class="fa fa-github fa-5x"></i></a>
-          </div>
-          <div class="col s3">
-            <a href="http://codepen.io/kristynrb" target="_blank"><i class="fa fa-codepen fa-5x"></i></a>
+    <div class="section" <a id="contact"></a>
+      <div id="header-container" class="valign-wrapper z-depth-1">
+        <h1>Get in Touch</h1>
+      </div>
+        <div class="container" id="about-section">
+          <div class="row">
+            <div class="col s3">
+              <a href="https://www.linkedin.com/in/kristynbryan" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>
+            </div>
+            <div class="col s3">
+              <a href="mailto:kristynrb@gmail.com" target="_blank"><i class="fa fa-envelope-o fa-5x"></i></a>
+            </div>
+            <div class="col s3">
+              <a href="https://github.com/kristynrb" target="_blank"><i class="fa fa-github fa-5x"></i></a>
+            </div>
+            <div class="col s3">
+              <a href="http://codepen.io/kristynrb" target="_blank"><i class="fa fa-codepen fa-5x"></i></a>
+            </div>
           </div>
         </div>
         <div hidden id="kristyn"><a href="#about"><img src="views/KBweb.jpeg" class="responsive-img"/></a></div>

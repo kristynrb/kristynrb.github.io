@@ -43,11 +43,20 @@ h1 {
 	font-family: 'Helvetica Neue';
 	font-size: 65px;
   font-weight: 100;
+  /*background-color: lightgray;*/
+  height: 100px;
+  width: 100%;
 }
 
 @media screen and (max-width: 400px){
   h1{
     font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 700px){
+  h1{
+    font-size: 50px;
   }
 }
 
@@ -130,6 +139,13 @@ div#prjimg {
   margin-top: 10%;
 }
 
-/*container {
-   background: #fdf0ff;
-}*/
+#about-section {
+  height: 100px;
+  margin-top: 10%;
+}
+
+#header-container {
+  /*background-color: lightgray;*/
+  background-color: #FDF1FF;
+
+}
