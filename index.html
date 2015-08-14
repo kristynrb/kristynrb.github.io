@@ -1,43 +1,175 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Kristyn Bryan by kristynrb</title>
+<!DOCTYPE html>
+<head>
+  <title>Kristyn Bryan</title>
+  <link type="text/css" rel="stylesheet" href="views/css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="views/stylesheet.css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- <link rel="stylesheet" type="text/css" href="coverr.css"> -->
+</head>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Kristyn Bryan</h1>
-        <p></p>
-
-
-        <p class="view"><a href="https://github.com/kristynrb">View My GitHub Profile</a></p>
-
-      </header>
-      <section>
-        <p><a href="https://www.linkedin.com/in/kristynbryan">https://www.linkedin.com/in/kristynbryan</a></p>
-
-<hr>
-
-<p><a href="mailto:kristynrb@gmail.com">kristynrb@gmail.com</a></p>
-
-<hr>
-
-<p>412.722.8272</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<body>
+  <!-- Navigation bar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#content">Contact</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#content">Contact</a></li>
+      </ul>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+  </nav>
+
+
+  <div><img class="background-image responsive-img" src="views/The-Crosswalk/Snapshots/Poster.jpg"></div>
+
+  <!-- About Me section -->
+  <a id="about"></a>
+  <div class="center-align">
+    <div class="container">
+      <div class="section" id="header">
+        <h1>Who Am I?</h1>
+        <h2>Former educator from Pittsburgh, my quest for knowledge continues in NYC. My focus is on web development, problem solving, and collaborating to make ideas become reality.</h2>
+        <div><img id="pittsburgh" class="responsive-img" src="views/skyline-pittsburgh.png"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Philosophy section -->
+  <div class="container center-align">
+    <div class="section" id="header"><a id="philosophy"></a>
+      <h1>My Coding Philosophy</h1>
+      <h2>"Just because something doesn't do what you planned it to do doesn't mean it's useless."</h2>
+      <h2>- Thomas Edison</h2>
+      <div id="philosophy" class="row">
+        <div class="col s4">
+          <img src="views/learn.jpg" class="circle responsive-img" >
+          <p>Learn ferociosly.</p>
+        </div>
+        <div class="col s4">
+          <img src="views/steps.jpg" class="circle responsive-img">
+          <p>Collaborate and be open to critique.</p>
+        </div>
+        <div class="col s4">
+          <img src="views/prague.jpg" class="circle responsive-img">
+          <p>Make it easy to maintain.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Languages section -->
+  <a id="languages"></a>
+  <div class="center-align">
+    <div class="container">
+      <div class="section" id="header">
+        <h1>I am a Polyglot</h1>
+
+        <div class="row">
+          <div class="col s6 m3 l3">
+            <img src="views/website_software_imgs/angularjs.jpg" >
+            <img src="views/website_software_imgs/jquery.jpg" >
+            <img src="views/website_software_imgs/npm.png">
+            <img src="views/website_software_imgs/node.jpg">
+          </div>
+          <div class="col s6 m3 l3">
+            <img style="margin: 1px;" src="views/website_software_imgs/css.png">
+            <img style="margin: 1px;" src="views/website_software_imgs/mongodb.jpg">
+            <img style="margin: 1px;" src="views/website_software_imgs/php.jpg">
+          </div>
+          <div class="col s6 m3 l3">
+            <img src="views/website_software_imgs/HTML5_Logo_64.png">
+            <img src="views/website_software_imgs/mysql.jpg">
+            <img src="views/website_software_imgs/postgresql.png">
+          </div>
+          <div class="col s6 m3 l3">
+            <img style="margin: 1px;"src="views/website_software_imgs/javascript.jpg">
+            <img style="margin: 1px;" src="views/website_software_imgs/rails.jpg">
+            <img style="margin: 1px;"src="views/website_software_imgs/ruby.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project section -->
+  <a id="projects"></a>
+  <div class="container" id="header">
+    <div class="section">
+      <div class="center-align">
+        <h1>Featured Work</h1>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div id="prjimg" class="col s6">
+            <img class="z-depth-2 materialboxed" width="100%" src="views/project_images/Bieu.png">
+          </div>
+          <div id="prjtxt" class="col s6">
+            <h2>Bieu</h2>
+            <p>A website for users to share their reviews about products and services in the beauty industry. Developed using Ruby on Rails framework with the use of Amazon S3 API for photo upload and storage.</p>
+            <a href="https://arcane-stream-7673.herokuapp.com/" target="_blank" class="btn waves-effect waves-ripple waves-light">See More</a>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div id="prjtxt" class="col s6">
+            <h2>Pet Guru</h2>
+            <p>A project created by a cross-functional team of developers, UX designer, and product manager. The front-end design was styled with Materialize with a Ruby on Rails framework using a Postgresql database.</p>
+            <a href="http://www.petguru.net/" target="_blank" class="btn waves-effect waves-ripple waves-light">See More</a>
+          </div>
+          <div id="prjimg" class="col s6"><img class="materialboxed z-depth-2" width="100%" src="views/project_images/petguru.png"></div>
+        </div>
+
+        <div class="col s12">
+          <div id="prjimg" class="col s6">
+            <img class="materialboxed z-depth-2" width="100%" src="views/project_images/henriettaandco.png">
+          </div>
+          <div id="prjtxt" class="col s6">
+            <h2>Henrietta & Co.</h2>
+            <p>Created with Javascript, MongoDB, and a node.js server with Express, this wiki was designed as a place where a company's employees can create articles and post topics.</p>
+            <a href="https://henriettaandco.herokuapp.com/" target="_blank" class="btn waves-effect waves-ripple waves-light">See More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact section -->
+  <div class="center-align">
+    <div class="container">
+      <div class="section" id="header"><a id="content"></a>
+        <h1 id="contact">Get in Touch!</h1>
+        <div class="row">
+          <div class="col s3">
+            <a href="https://www.linkedin.com/in/kristynbryan" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>
+          </div>
+          <div class="col s3">
+            <a href="mailto:kristynrb@gmail.com" target="_blank"><i class="fa fa-envelope-o fa-5x"></i></a>
+          </div>
+          <div class="col s3">
+            <a href="https://github.com/kristynrb" target="_blank"><i class="fa fa-github fa-5x"></i></a>
+          </div>
+          <div class="col s3">
+            <a href="http://codepen.io/kristynrb" target="_blank"><i class="fa fa-codepen fa-5x"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Javascript tags -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="js/personal_site.js"></script>
+</body>
+
 </html>

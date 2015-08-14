@@ -1,0 +1,109 @@
+html {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+nav {
+  background-color: white;
+}
+
+nav ul a {
+  color: black;
+}
+
+i.fa.fa-bars{
+  color: black;
+  margin-left: 20%;
+}
+
+i.fa {
+  color: black;
+}
+
+#name-box {
+  color: white;
+  width: 100%;
+  font-size: 65px;
+  font-weight: 100;
+  z-index: 2;
+  position: absolute;
+  box-sizing: border-box;
+  height: auto;
+}
+
+#name {
+  width: 100%;
+  margin-top: 20%;
+}
+
+i.fa fa-chevron-down{
+  margin-top: -10px;
+}
+
+h1 {
+	font-family: 'Helvetica Neue';
+	font-size: 65px;
+	font-weight: 100;
+}
+
+h2 {
+	font-family: 'HelveticaNeue-Light';
+	font-size: 28px;
+  font-weight: 300;
+}
+
+a.btn {
+  font-family: 'Helvetica Neue';
+  border-radius: 40px 40px 40px / 40px 40px;
+  background-color: #E0B1E6;
+  font-weight: thin;
+}
+
+a.btn:hover {
+  background-color: lightgray;
+}
+
+div#prjtxt {
+  height: 300px;
+  margin-top: 10%;
+  padding: 5%;
+  padding-top:0%;
+}
+
+div#prjimg {
+  height: 300px;
+  margin-top: 10%;
+}
+
+.container {
+  min-height: 550px;
+}
+
+
+.background-image {
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  overflow: hidden;
+  max-height: 600px;
+  display: block;
+  margin-top: 0;
+}
+
+#philosophy {
+  margin-top: 10%;
+}
+
+#pittsburgh {
+  opacity: .2;
+  max-width: 100%;
+  margin-top: 10%;
+}
+
+.section {
+  margin-top: 5%;
+}
+
+#contact {
+  margin-bottom: 20%;
+}
