@@ -77,7 +77,8 @@ div#prjimg {
 }
 
 .container {
-  min-height: 550px;
+  /*min-height: 550px;*/
+  min-height: 100%;
 }
 
 
