@@ -1,1 +1,6 @@
-# personal_site
+# Personal website
+
+##Technologies used
+HTML, CSS, Materialize, JavaScript
+
+
