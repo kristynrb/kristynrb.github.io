@@ -86,8 +86,13 @@ div#prjimg {
   margin-top: 10%;
 }
 
+@media screen and (max-width: 400px){
+  div#prjimg {
+    height: 100%;
+  }
+}
+
 .container {
-  /*min-height: 550px;*/
   min-height: 100%;
 }
 
