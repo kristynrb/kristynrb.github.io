@@ -75,7 +75,8 @@ h2 {
 a.btn {
   font-family: 'Helvetica Neue';
   border-radius: 40px 40px 40px / 40px 40px;
-  background-color: #E0B1E6;
+  /*background-color: #E0B1E6;*/
+  background-color: #635D65;
   font-weight: thin;
 }
 
