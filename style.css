@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+#container {
+  font-family: 'Avenir Next', 'Poppins', sans-serif;
+
+  background-color: #F4F4F4;
+
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+  -webkit-align-items: center;
+  align-items: center;
+
+  /*justify-content is not working*/
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#center-box{
+  background-color: #DCD0C0;
+  height: 200px;
+  width: 400px;
+}
+
+nav{
+  width: 80%;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+li {
+  color: #373737;
+  list-style-type: none;
+  padding: 10px;
+}
+
+li:hover {
+  color: #C0B283;
+}
