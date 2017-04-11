@@ -65,3 +65,15 @@ a:hover {
 #display-section {
   margin: 40px;
 }
+
+#about-me {
+  width: 80%;
+}
+
+i {
+  color: #373737;
+}
+
+i:hover {
+  color: #C0B283;
+}
