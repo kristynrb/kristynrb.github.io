@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+
 #container {
   font-family: 'Avenir Next', 'Poppins', sans-serif;
 
+  position: fixed;
   background-color: #F4F4F4;
 
   display: -webkit-flex;
@@ -20,8 +22,8 @@
 
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  top: 0;
+  left: 0;
 }
 
 #center-box{
@@ -38,6 +40,7 @@ ul{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 li {
