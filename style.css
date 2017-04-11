@@ -51,4 +51,17 @@ li {
 
 li:hover {
   color: #C0B283;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover {
+  color: #C0B283;
+}
+
+#display-section {
+  margin: 40px;
 }
