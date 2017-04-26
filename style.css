@@ -43,6 +43,24 @@
   }
 }
 
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-o-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .lid {
   stroke-dasharray: 3936.615234375;
   stroke-dashoffset: 3936.615234375;
